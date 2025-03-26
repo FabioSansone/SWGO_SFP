@@ -9,9 +9,9 @@ SFP_ADDR = 0x50
 
 switch = I2CSwitch(i2c_bus=2, i2c_addr=SWITCH_ADDR)
 switch.reset()
+print(switch.get_channel_debug())
+
 sfp = SFP(i2c_bus=2, i2c_addr=SFP_ADDR, i2c_select=(partial(switch.select, 0),))
-
-
 print(switch.get_channel_debug())
 
 print("SFP #0")

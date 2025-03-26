@@ -1,5 +1,4 @@
 from smbus2 import SMBus
-import time
 
 class SFP:
 
@@ -21,7 +20,7 @@ class SFP:
     def select(self):
         for func in self.i2c_select:
             func()
-            time.sleep(0.1)
+            
 
     def is_available(self):
         self.select()
