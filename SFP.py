@@ -1,7 +1,8 @@
 from smbus2 import SMBus
+import time
 
 class SFP:
-    
+
     REG_VENDOR = 0x14
     REG_MODEL = 0x28
     REG_SERIAL = 0x44
@@ -20,6 +21,7 @@ class SFP:
     def select(self):
         for func in self.i2c_select:
             func()
+            time.sleep(0.1)
 
     def is_available(self):
         self.select()
