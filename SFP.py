@@ -1,4 +1,4 @@
-from smbus2 import SMBus
+from smbus2 import SMBus 
 
 class SFP:
 

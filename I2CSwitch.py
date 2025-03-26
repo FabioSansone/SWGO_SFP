@@ -3,7 +3,7 @@ import time
 
 class I2CSwitch:
 
-    selmap = [0x01, 0x02, 0x04, 0x08]
+    selmap = [0x1, 0x2, 0x4, 0x8]
 
     def __init__(self, i2c_bus, i2c_addr):
         self.i2c_addr = i2c_addr
