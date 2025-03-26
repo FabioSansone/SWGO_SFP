@@ -34,6 +34,7 @@ class SFP:
         self.select()
         vendor = self.bus.read_i2c_block_data(self.i2c_addr, self.REG_VENDOR, 16)
         print(vendor)
+        print(''.join([chr(byte) if byte != 0x20 else ' ' for byte in vendor]).rstrip())
         return str.rstrip(''.join(map(chr, vendor)))
 
     def model(self):
