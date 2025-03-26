@@ -1,7 +1,7 @@
 from smbus2 import SMBus
 
 class SFP:
-
+    
     REG_VENDOR = 0x14
     REG_MODEL = 0x28
     REG_SERIAL = 0x44

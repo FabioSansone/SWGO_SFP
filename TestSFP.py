@@ -2,13 +2,12 @@
 from SFP import SFP
 from I2CSwitch import I2CSwitch
 
+SWITCH_ADDR = 0x70
+SFP_ADDR = 0x50
 
-switch = I2CSwitch(i2c_bus=2, i2c_addr=0x70)
-switch.reset()
 
-
-sfp = SFP(i2c_bus=2, i2c_addr=0x70, i2c_select=(lambda:switch.select(0),))
-
+switch = I2CSwitch(i2c_bus=2, i2c_addr=SWITCH_ADDR)
+sfp = SFP(i2c_bus=2, i2c_addr=SFP_ADDR, i2c_select=(lambda:switch.select(0),))
 
 
 print(switch.get_channel_debug())
