@@ -7,6 +7,9 @@ class I2CSwitch:
     def __init__(self, i2c_bus, i2c_addr):
         self.i2c_addr = i2c_addr
         self.bus = SMBus(i2c_bus)
+    
+    def reset(self):
+        self.bus.write_byte_data(self.i2c_addr, 0x00, 0x00)
 
     def select(self, channel):
         if channel not in range(4):
