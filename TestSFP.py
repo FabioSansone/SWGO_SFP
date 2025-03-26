@@ -10,6 +10,7 @@ switch.reset()
 sfp = SFP(i2c_bus=2, i2c_addr=0x70, i2c_select=(lambda:switch.select(0),))
 
 
+
 print(switch.get_channel_debug())
 
 print("SFP #0")
