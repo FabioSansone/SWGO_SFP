@@ -32,6 +32,8 @@ class SFP:
     def vendor(self):
         self.select()
         vendor = self.bus.read_i2c_block_data(self.i2c_addr, self.REG_VENDOR, 16)
+        print(bytes(vendor).decode('ascii', errors='ignore').strip() + "\n")
+        print(str.rstrip(''.join(map(chr, vendor))))
         return bytes(vendor).decode('ascii', errors='ignore').strip()
         #return str.rstrip(''.join(map(chr, vendor)))
 
